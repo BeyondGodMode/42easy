@@ -6,16 +6,16 @@
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 10:24:18 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/10 11:22:25 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/10 11:46:10 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
-#include "rush01.c"
+#include "rush02.c"
 
 
 int     main(void)
 {
-    rush(4,4);
+    rush(5,3);
     return 0;
 }
