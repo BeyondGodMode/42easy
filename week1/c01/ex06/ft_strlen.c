@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 01:40:17 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/11 01:58:13 by beyond           ###   ########.fr       */
+/*   Created: 2023/06/11 16:46:21 by beyond            #+#    #+#             */
+/*   Updated: 2023/06/12 22:41:04 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int		ft_strlen(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int		n;
+	
+	n = 0;
+	while (*str != '\0')
+	{
+		str++;
+		n++;
+	}
+	return n;
 }
