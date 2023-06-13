@@ -1,26 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 16:46:21 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/13 01:18:47 by beyond           ###   ########.fr       */
+/*   Created: 2023/06/12 22:49:02 by beyond            #+#    #+#             */
+/*   Updated: 2023/06/13 10:50:33 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
+#include<stdio.h>
 
-int		ft_strlen(char *str)
+void ft_sort_int_tab(int *tab, int size)
 {
-	int		n;
-	
-	n = 0;
-	while (*str != '\0')
+	int		i;
+	int		j;
+	int		mini;
+	int		temp;
+	int		index;
+
+	i = 0;
+	while (i < size)
 	{
-		str++;
-		n++;
+		temp = tab[i];
+		j=i;
+		mini = temp;
+		while (j < size)
+		{	
+			if(mini > tab[j])
+			{
+				mini = tab[j];
+				index = j;
+			}
+			j++;
+		}
+		tab[i] = mini;
+		tab[index] = temp;
+		i++;
 	}
-	return n;
 }
