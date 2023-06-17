@@ -6,7 +6,7 @@
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 22:50:41 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/17 00:33:22 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/17 11:20:39 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,16 @@
 #include<stdlib.h>
 #include<stdio.h> // comment duaw sus
 
-int	ft_valid(int *numbers,int size)
+int	ft_valid(int *numbers,int argc,int size)
 {
 	int		n;
 	char	*text;
 	
 	n = sizeof(numbers) /  sizeof(int);
 	if (n != size * size)
-	{
-		
-	}
-	while ()
-	{
-		/* code */
-	}
+		return (1);
+	if (argc != 3)
+		return (1);
 	
 }
 
@@ -44,7 +40,10 @@ int	*ft_getval(char *argv ,int size)
 	{
 		if(argv[i] >= '0' && argv[i] <= '9')
 		{
-			numbers[count] = argv[i] - '0';
+			if (argv[i - 1] == '-')
+				numbers[count] = (argv[i] - '0') * -1;
+			else
+				numbers[count] = argv[i] - '0';
 			count++;
 		}
 		i++;
@@ -60,6 +59,7 @@ int main(int argc,char **argv)
 	
 	size = *argv[2] - '0';
 	numbers = ft_getval(argv[1], size);
+	printf("size of array %ld",sizeof(numbers)/sizeof(numbers[0]));
 	for(int i = 0; i < size*size; i++)
 	{
 		printf("%d ",numbers[i]);
