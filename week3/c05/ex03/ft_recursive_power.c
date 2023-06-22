@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 22:52:43 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/17 00:45:04 by beyond           ###   ########.fr       */
+/*   Created: 2023/06/22 12:05:38 by beyond            #+#    #+#             */
+/*   Updated: 2023/06/22 12:08:02 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+// #include <stdio.h>
 
-void    ft_putchar(char c)
+int	ft_recursive_power(int nb, int power)
 {
-    write(1, &c, 1);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	nb *= ft_recursive_power(nb, power - 1);
+	return (nb);
 }
+// int	main(void)
+// {
+// 	printf("%d",ft_recursive_power(3,3));
+// 	return (0);
+// }
