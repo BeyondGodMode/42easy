@@ -1,35 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/25 11:19:58 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/26 01:29:13 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/26 03:18:04 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/26 03:30:21 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 // #include <stdio.h>
 
-int	ft_is_prime(int nb)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
 
-	i = 2;
-	if (nb <= 1)
-		return (0);
-	while (i * i <= nb)
+	if (min >= max)
 	{
-		if (nb % i == 0)
-			return (0);
+		*range = NULL;
+		return (0);
+	}
+	*range = (int *)malloc ((max - min) * sizeof(int));
+	if (*range == NULL)
+		return (-1);
+	i = 0;
+	while (i < (max - min))
+	{
+		(*range)[i] = min + i;
 		i++;
 	}
-	return (1);
+	return (i);
 }
 
 // int	main(void)
 // {
-// 	printf("%d",ft_is_prime(8));
+// 	int	*nb;
+// 	int	i;
+// 	int	n;
+
+// 	n = ft_ultimate_range(&nb, 0, 5);
+// 	printf("n is =  %d\n",n);
+// 	i = 0;
+// 	while (i++ < 4)
+// 		printf("%d ", nb[i]);
 // 	return (0);
 // }

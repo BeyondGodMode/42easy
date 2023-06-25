@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 22:49:02 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/26 02:39:36 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/26 02:58:07 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/26 03:14:41 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include <stdlib.h>
+// #include <stdio.h>
 
-void	ft_sort_int_tab(int *tab, int size)
+int	*ft_range(int min, int max)
 {
-	int		i;
-	int		j;
-	int		mini;
-	int		temp;
-	int		index;
+	int	*nb;
+	int	i;
 
 	i = 0;
-	while (i < size)
+	if (min >= max)
+		return (0);
+	nb = (int *) malloc((max - min) * sizeof(int));
+	while (i < (max - min))
 	{
-		temp = tab[i];
-		j = i + 1;
-		mini = temp;
-		while (j < size)
-		{
-			if (mini > tab[j])
-			{
-				mini = tab[j];
-				index = j;
-			}
-			j++;
-		}
-		tab[i] = mini;
-		tab[index] = temp;
+		nb[i] = min + i;
 		i++;
 	}
+	return (nb);
 }
+
+// int	main(void)
+// {
+// 	int	*a;
+// 	int	i;
+
+// 	i = 0;
+// 	a = ft_range(-5, 5);
+// 	while (i < 11)
+// 	{
+// 		printf("%d ",a[i]);
+// 		i++;
+// 	}
+// 	free(a);
+// 	return (0);
+// }
+

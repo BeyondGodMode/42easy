@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 22:49:02 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/26 02:39:36 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/26 01:27:40 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/26 01:35:12 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+// #include <stdio.h>
 
-void	ft_sort_int_tab(int *tab, int size)
+int	ft_is_prime(int nb)
 {
-	int		i;
-	int		j;
-	int		mini;
-	int		temp;
-	int		index;
+	int	i;
 
-	i = 0;
-	while (i < size)
+	i = 2;
+	if (nb <= 1)
+		return (0);
+	while (i * i <= nb)
 	{
-		temp = tab[i];
-		j = i + 1;
-		mini = temp;
-		while (j < size)
-		{
-			if (mini > tab[j])
-			{
-				mini = tab[j];
-				index = j;
-			}
-			j++;
-		}
-		tab[i] = mini;
-		tab[index] = temp;
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
+	return (1);
 }
+
+int	ft_find_next_prime(int nb)
+{
+	while (1)
+	{
+		if (ft_is_prime(nb))
+			return (nb);
+		nb++;
+	}
+}
+
+// int	main(void)
+// {
+// 	printf("%d",ft_find_next_prime(213450));
+// 	return (0);
+// }

@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 22:49:02 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/26 02:39:36 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/26 02:54:00 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/26 02:57:02 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+#include <stdlib.h>
 
-void	ft_sort_int_tab(int *tab, int size)
+char	*ft_strdup(char *src)
 {
+	char	*dest;
 	int		i;
-	int		j;
-	int		mini;
-	int		temp;
-	int		index;
 
 	i = 0;
-	while (i < size)
+	while (src[i] != '\0')
+		i++;
+	dest = (char *)malloc((i + 1) * sizeof(char));
+	i = 0;
+	while (src[i] != '\0')
 	{
-		temp = tab[i];
-		j = i + 1;
-		mini = temp;
-		while (j < size)
-		{
-			if (mini > tab[j])
-			{
-				mini = tab[j];
-				index = j;
-			}
-			j++;
-		}
-		tab[i] = mini;
-		tab[index] = temp;
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
