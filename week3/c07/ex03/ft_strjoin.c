@@ -6,14 +6,25 @@
 /*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:41:05 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/27 17:02:26 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/28 12:17:39 by beyond           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 #include <stdlib.h>
 
-// #include <stdio.h>
+int	ft_len(char *str)
+{
+	int	count;
+
+	count = 0;
+	while (*str != '\0')
+	{
+		count++;
+		str++;
+	}
+	return (count);
+}
 
 char	*ft_strcat(char *dest, char *src)
 {
@@ -36,15 +47,26 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*str;
 	int		i;
+	int		total;
 
-	str = (char *)malloc(sizeof(str) + 1);
-	str = (char *)malloc((sizeof(sep) * size) + 1);
-	ft_strcat(str, strs[0]);
-	i = 1;
+	if (size <= 0)
+		return (NULL);
+	i = 0;
+	total = 0;
 	while (i < size)
 	{
-		ft_strcat(str, sep);
+		total += ft_len(strs[i]);
+		i++;
+	}
+	total += (size - 1) * (ft_len(sep) + 1);
+	str = (char *)malloc(total + 1);
+	i = 0;
+	str[0] = '\0';
+	while (i < size)
+	{
 		ft_strcat(str, strs[i]);
+		if (i < size - 1)
+			ft_strcat(str, sep);
 		i++;
 	}
 	return (str);
@@ -52,8 +74,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 // int	main(void)
 // {
-// 	char	*strs[] = {"Hello","easy","world","fun"};
-// 	char	sep[] = ", ";
-// 	printf("%s", ft_strjoin(3,strs,sep));
+// 	char *strs[] = {"H", "easy", "world"};
+// 	char sep[] = ", ";
+// 	// printf("%ld\n", sizeof(strs));
+// 	printf("%s", ft_strjoin(3, strs, sep));
 // 	return (0);
 // }
