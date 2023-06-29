@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 16:21:01 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/12 22:40:53 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/13 15:42:21 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr(char *str)
 	char	*current;
 
 	current = str;
-	while(*current != '\0')
+	while (*current != '\0')
 	{
-		write(1, current,1);
+		write(1, current, 1);
 		current++;
 	}
 }

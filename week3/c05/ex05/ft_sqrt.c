@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 13:01:18 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/25 11:15:31 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/28 22:18:59 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_sqrt(int nb)
 {
-	int	guess;
+	long long	guess;
 
 	guess = nb / 2;
 	if (nb <= 0 || nb == 2)

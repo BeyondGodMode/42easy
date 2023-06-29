@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 16:46:21 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/13 01:18:47 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/13 15:44:52 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int		n;
-	
+
 	n = 0;
 	while (*str != '\0')
 	{
 		str++;
 		n++;
 	}
-	return n;
+	return (n);
 }

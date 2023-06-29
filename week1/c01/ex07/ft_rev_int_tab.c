@@ -3,30 +3,44 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 22:24:25 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/12 23:11:06 by beyond           ###   ########.fr       */
+/*   Updated: 2023/06/15 14:35:46 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include<stdio.h>
+//#include<stdio.h>
 
 void	ft_rev_int_tab(int *tab, int size)
 {
 	int		temp;
 	int		i;
-	int		n;
 
-	n = size;
 	i = 0;
-	while(i <= n / 2)
+	size--;
+	while (i < size)
 	{
 		temp = tab[i];
-		tab[i] = tab[n - 1];
-		tab[n - 1] = temp;
+		tab[i] = tab[size];
+		tab[size] = temp;
 		i++;
-		n--;
+		size--;
 	}
 }
+
+/*int		main()
+{
+	int	a[] ={1000,232,1112,442,523,51225,66734,23345};
+	int	i;
+	for(i = 0 ; i<8 ; i++)
+	{
+		printf("%d ",a[i]);
+	}
+		printf("\n");
+	ft_rev_int_tab(a,8);
+	for(i = 0 ; i<8 ; i++)
+	{
+		printf("%d ",a[i]);
+	}
+}*/

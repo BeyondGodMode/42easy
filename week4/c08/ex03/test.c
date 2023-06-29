@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/11 01:40:17 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/13 15:42:08 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/29 21:28:53 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/29 21:52:58 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include "ft_point.h"
+#include <stdio.h>
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+void	set_point(t_point *point)
 {
-	*div = a / b;
-	*mod = a % b;
+	point->x = 42;
+	point->y = 21;
+}
+
+int	main(void)
+{
+	t_point	a;
+
+	set_point(&a);
+	printf("%d",a.x);
 }

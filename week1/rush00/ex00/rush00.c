@@ -3,40 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beyond <beyond@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hnonpras <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/10 10:45:49 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/10 11:47:48 by beyond           ###   ########.fr       */
+/*   Created: 2023/06/10 13:26:13 by hnonpras          #+#    #+#             */
+/*   Updated: 2023/06/10 14:49:11 by hnonpras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-#include "ft_putchar.c"
+void	ft_putchar(char c);
 
-void	rush(int	n,int	m)
+void	rush(int x, int y)
 {
-	int		i;
-	int		j;
-	
-	j=0;
-	while (j < m)
+	int	i;
+	int	j;
+
+	j = 0;
+	while (j++ < y)
 	{
 		i = 0;
-		while (i < n)
+		while (i++ < x)
 		{
-			if (j == 0 || j == m - 1)
-				if (i == 0 || i == n - 1)
-					ft_putchar('o');
-				else
-					ft_putchar('-');
+			if ((i == 1 && j == 1)
+				|| (i == 1 && j == y)
+				|| (i == x && j == 1)
+				|| (i == x && j == y))
+				ft_putchar('o');
+			else if (i == 1 || i == x)
+				ft_putchar('|');
+			else if (j == 1 || j == y)
+				ft_putchar('-');
 			else
-				if (i == 0 || i == n - 1)
-					ft_putchar('|');
-				else
-					ft_putchar(' ');
-			i++;
+				ft_putchar(' ');
 		}
 		ft_putchar('\n');
-		j++;
 	}
+	return ;
 }

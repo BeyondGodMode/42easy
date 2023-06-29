@@ -6,7 +6,7 @@
 /*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 01:27:40 by tsongtra          #+#    #+#             */
-/*   Updated: 2023/06/26 01:35:12 by tsongtra         ###   ########.fr       */
+/*   Updated: 2023/06/28 22:18:40 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_is_prime(int nb)
 {
-	int	i;
+	long long	i;
 
 	i = 2;
 	if (nb <= 1)
@@ -40,6 +40,6 @@ int	ft_find_next_prime(int nb)
 
 // int	main(void)
 // {
-// 	printf("%d",ft_find_next_prime(213450));
+// 	printf("%d",ft_find_next_prime(2147483646));
 // 	return (0);
 // }

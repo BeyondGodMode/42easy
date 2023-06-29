@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putsting.c                                      :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsongtra <tsongtra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tsongtra <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 00:44:39 by beyond            #+#    #+#             */
-/*   Updated: 2023/06/18 00:36:59 by tsongtra         ###   ########.fr       */
+/*   Created: 2023/06/08 17:54:47 by tsongtra          #+#    #+#             */
+/*   Updated: 2023/06/08 18:22:35 by tsongtra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_putsting(char *c)
+void	ft_is_negative(int n)
 {
-	while (*c != '\0')
+	if (n < 0)
 	{
-		write(1, c, 1);
-		c++;
+		write(1, "N", 1);
+	}
+	else
+	{
+		write(1, "P", 1);
 	}
 }
